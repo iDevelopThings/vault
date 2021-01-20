@@ -1,0 +1,54 @@
+{
+    "name": "scootersam/vault",
+    "description": "Keep your .env file out of your project.",
+    "keywords": [
+        "scootersam",
+        "vault"
+    ],
+    "homepage": "https://github.com/scootersam/vault",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Sam Parton",
+            "email": "sam@idevelopthings.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ScooterSam\\Vault\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ScooterSam\\Vault\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ScooterSam\\Vault\\VaultServiceProvider"
+            ],
+            "aliases": {
+                "Vault": "ScooterSam\\Vault\\VaultFacade"
+            }
+        }
+    }
+}
